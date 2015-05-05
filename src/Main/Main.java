@@ -53,7 +53,7 @@ public class Main {
 		File core = new File(FN);
 		while(!core.exists()) Thread.sleep(500);
 		
-		ProcessBuilder builder = new ProcessBuilder("java -jar " + FN);
+		ProcessBuilder builder = new ProcessBuilder("java", "-jar", FN);
 		Process process = builder.start();
 		frame.setVisible(false);
 		process.waitFor();
