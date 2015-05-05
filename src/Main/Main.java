@@ -72,18 +72,15 @@ public class Main {
 			int[] index = { str.indexOf("\"") + 1, 0 };
 			index[1] = str.indexOf("\"", index[0] + 1);
 			Name = str.substring(index[0], index[1]);
-			System.out.println(Name + "/" + wanted);
 			
 			if (!Name.equals(wanted)) {
 				continue;
 			}
 
-			System.out.println(Name);
 
 			index[0] = str.indexOf("\"", index[1] + 1) + 1;
 			index[1] = str.indexOf("\"", index[0] + 1);
 			Value = str.substring(index[0], index[1]);
-			System.out.println(Name + " " + Value);
 			bf.close();
 			return Value;
 
