@@ -52,12 +52,11 @@ public class Main {
 		
 		File core = new File(FN);
 		while(!core.exists()) Thread.sleep(500);
-		
+		core.deleteOnExit();
 		ProcessBuilder builder = new ProcessBuilder("java", "-jar", FN);
 		Process process = builder.start();
 		frame.setVisible(false);
 		process.waitFor();
-		new File(FN).delete();
 		System.exit(1);
 
 	}
@@ -76,7 +75,6 @@ public class Main {
 			if (!Name.equals(wanted)) {
 				continue;
 			}
-
 
 			index[0] = str.indexOf("\"", index[1] + 1) + 1;
 			index[1] = str.indexOf("\"", index[0] + 1);
