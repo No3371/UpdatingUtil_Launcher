@@ -50,6 +50,8 @@ public class Main {
 		String FN = getVariables("MCLauncherFN"), url = getVariables("MCLauncherURL");
 		download(FN, new URL(url));
 		
+		if(new File("Launcher.jar").exists()) new File("Launcher.jar").delete(); //delete previous version of launcher.
+		
 		File core = new File(FN);
 		while(!core.exists()) Thread.sleep(500);
 		core.deleteOnExit();
